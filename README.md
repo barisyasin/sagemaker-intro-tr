@@ -1,40 +1,47 @@
-# Project Title
+# AWS Kullanarak makina öğrenmesi modellerinin oluşturulması ve web servis olarak sunulması
 
-One Paragraph of project description goes here
+Bu atölye çalışmasında AWS servislerini kullanarak adım adım bir makina öğrenmesi modeli oluşturacağız web servis olarak modelimizi web üzerinden erişime açacağız
 
-## Getting Started
+### Ön koşullar
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+AWS hesabınız olmalıdır. Yoksa şu linkten oluşturabilirsiniz: https://aws.amazon.com/resources/create-account/
 
-### Prerequisites
+### Adımalr
 
-What things you need to install the software and how to install them
+Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
 
 ```
-Give the example
+Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
+Amazon S3 üzerinde bucket'ımızın oluşturulması
+Modelin oluşturulması
+Modeli çağıracak AWS Lambda fonksiyonunun yazılması
+AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması
+Servisin testi
 ```
 
-And repeat
 
-```
-until finished
-```
+## Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
+•   AWS Konsol'a login olun
+•   AWS Services etiketinin aldındaki arama kutusuna Sagemaker yazın, çıkan linke tıklayın
+•   Konsolda sağ üst köşedeki Region'lardan kendinize yakın olan birini seçin (sadece Amazon Sagemaker’ın kullanılabildiği Regionlar listelenmektedir). Seçtiğiniz Region’ın adını bir kenara not alın.
 
-End with an example of getting some data out of the system or using it for a little demo
+## Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
 
-## Running the tests
+## Amazon S3 üzerinde bucket'ımızın oluşturulması
 
-Explain how to run the automated tests for this system
+## Modelin oluşturulması
+
+## Modeli çağıracak AWS Lambda fonksiyonunun yazılması
+
+## AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması
+
+## Servisin testi
+
+
+
+
+
 
 ### Break down into end to end tests
 
