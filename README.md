@@ -10,81 +10,96 @@ AWS hesabınız olmalıdır. Yoksa şu linkten oluşturabilirsiniz: https://aws.
 
 Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 
-
-*Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
-*Amazon S3 üzerinde bucket'ımızın oluşturulması
-*Modelin oluşturulması
-*Modeli çağıracak AWS Lambda fonksiyonunun yazılması
-*AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması
+* Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
+* Amazon S3 üzerinde bucket'ımızın oluşturulması
+* Modelin oluşturulması
+* Modeli çağıracak AWS Lambda fonksiyonunun yazılması
+* AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması
 Servisin testi
 
 ## Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
-*AWS Konsol'a login olun
-*AWS Services etiketinin aldındaki arama kutusuna Sagemaker yazın, çıkan linke tıklayın
-*Konsolda sağ üst köşedeki Region'lardan kendinize yakın olan birini seçin (sadece Amazon Sagemaker’ın kullanılabildiği Regionlar listelenmektedir). Seçtiğiniz Region’ın adını bir kenara not alın.
+* AWS Konsol'a login olun
+* AWS Services etiketinin aldındaki arama kutusuna Sagemaker yazın, çıkan linke tıklayın
+* Konsolda sağ üst köşedeki Region'lardan kendinize yakın olan birini seçin (sadece Amazon Sagemaker’ın kullanılabildiği Regionlar listelenmektedir). Seçtiğiniz Region’ın adını bir kenara not alın.
 
 <p align="center">
-<img src="Picture0.png">
-<img src="Picture0.png">
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture0.png">
-<img src="https://github.com/awslabs/amazon-sagemaker-examples/blob/master/scientific_details_of_algorithms/lda_topic_modeling/img/img_documents.png">
 </p>
 
 * “Create notebook” instance butonuna tıkla
 
-IMAGE 2
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture1.png">
+</p>
 
 * Notebook instance name kutucuğuna istediğiniz tanımlayıcı metni girin. Notebook instance type olarak ml.m4.xlarge seçin. Diğer alanları değiştirmeden Create Notebook Instance butonuna tıklayın.
 
-IMAGE 3
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture2.png">
+</p>
 
 ## Amazon S3 üzerinde bucket'ımızın oluşturulması
 * Üzerinde makina öğrenmesi algoritmalarını deneyeceğimiz ortamımız oluşturulurken, bu ortamın ihtiyaç duyacağı veriyi tutacağımız S3 bucket’ımızı oluşturalım. Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa S3 yazın ve en üstte gelen linke tıklayın.
 * Gelen ekranda Create Bucket butonuna tıklayın
 
-IMAGE 4
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture3.png">
+</p>
 
 * Bucket name alanına içinde sagemaker kelimesi geçecek şekilde bir metin girin. Örn. adinizsoyadiniz-sagemaker. Bucket adını not alın.
 * Region olarak yukarıda not aldığınız Region’ı seçin
 * Sol alt köşede bulunan Create butonuna tıklayarak bucket’ınızı yaratın
 
 ## Modelin oluşturulması
-*Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa Sagemaker yazın ve en üstte gelen linke tıklayın
-*Soldaki menüden Notebook instances linkine tıklayın
-*Gelen listede oluşturduğunuz Notebook Instance’ın Status’u InService olarak görünüyorsa Open linkine tıklayın. InService olarak görünmüyorsa birkaç dakika daha bekleyin
+* Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa Sagemaker yazın ve en üstte gelen linke tıklayın
+* Soldaki menüden Notebook instances linkine tıklayın
+* Gelen listede oluşturduğunuz Notebook Instance’ın Status’u InService olarak görünüyorsa Open linkine tıklayın. InService olarak görünmüyorsa birkaç dakika daha bekleyin
 
-IMAGE 5
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture4.png">
+</p>
 
-*Open linkine tıkladığınızda tarayıcınızın yeni bir ekranında Jupyter açılacak
-*Jupyter’de yukarıdaki tablardan SageMaker Examples’ı seçin
-*Introduction to Applying Machine Learning bölmesindeki Breast Cancer Prediction.ipynb notebook’unu bulun ve en sağdaki Use butonuna tıklayın, gelen pop-up ekranında Create copy butonuna tıklayın. Tarayıcınız yeni bir ekranında seçtiğiniz Jupyter notebook açılacaktır
+* Open linkine tıkladığınızda tarayıcınızın yeni bir ekranında Jupyter açılacak
+* Jupyter’de yukarıdaki tablardan SageMaker Examples’ı seçin
+* Introduction to Applying Machine Learning bölmesindeki Breast Cancer Prediction.ipynb notebook’unu bulun ve en sağdaki Use butonuna tıklayın, gelen pop-up ekranında Create copy butonuna tıklayın. Tarayıcınız yeni bir ekranında seçtiğiniz Jupyter notebook açılacaktır
 
-IMAGE 6
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture5.png">
+</p>
 
-*Açılan notebook’u inceledikten sonra en üst kutucuktaki <your_s3_bucket_name_here> yazan yere not aldığınız bucket adını kopyalayın.
+* Açılan notebook’u inceledikten sonra en üst kutucuktaki <your_s3_bucket_name_here> yazan yere not aldığınız bucket adını kopyalayın.
 
-IMAGE 7
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture6.png">
+</p>
 
-*En alttaki kutucuğa gidin. Satırın en başına # yazarak comment out edin.
-*Cell menüsünde Run All’ı seçin. Notebook’daki bütün satırların çalışması bitene kadar bekleyin. Bu işlem yaklaşık 10 dakika sürecektir. O anda çalıştırılan kod satırlarının yanında (*) işareti çıkacaktır.
+* En alttaki kutucuğa gidin. Satırın en başına # yazarak comment out edin.
+* Cell menüsünde Run All’ı seçin. Notebook’daki bütün satırların çalışması bitene kadar bekleyin. Bu işlem yaklaşık 10 dakika sürecektir. O anda çalıştırılan kod satırlarının yanında (*) işareti çıkacaktır.
 
-IMAGE 8
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture7.png">
+</p>
 
 ## Modeli çağıracak AWS Lambda fonksiyonunun yazılması
 
-*Şimdi yarattığımız bu model’ı çağıran bir Lambda fonksiyonu yaratacağız. Amacımız aşağıdaki yapıyı kurarak modelimizi web servisler üzerinden ulaşılabilir hale getirmek
+* Şimdi yarattığımız bu model’ı çağıran bir Lambda fonksiyonu yaratacağız. Amacımız aşağıdaki yapıyı kurarak modelimizi web servisler üzerinden ulaşılabilir hale getirmek
 
-IMAGE 9
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture8.png">
+</p>
 
-*Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa Lambda yazın ve en üstte gelen linke tıklayın
-*Gelen ekranda Create Function butonuna tıklayın
-*Name alanına sagemakerinvokerfunction yazın
-*Runtime’ı Python 3.6 seçin
+* Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa Lambda yazın ve en üstte gelen linke tıklayın
+* Gelen ekranda Create Function butonuna tıklayın
+* Name alanına sagemakerinvokerfunction yazın
+* Runtime’ı Python 3.6 seçin
 
-IMAGE 10
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture9.png">
+</p>
 
-*Role için Create a custom role seçeneğine tıklayın. AWS Lambda’nın Amazon Sagemaker’ı çağırırken kullanacağı rolü oluşturacağınız ekran açılacaktır. 
-*Açılan ekranda View Policy Document’e tıkladıktan sonra ortaya çıkan Edit linkine tıklayın. Policy document kutucuğu editable duruma gelecektir. Kutucuğa şu text’i girin:
+* Role için Create a custom role seçeneğine tıklayın. AWS Lambda’nın Amazon Sagemaker’ı çağırırken kullanacağı rolü oluşturacağınız ekran açılacaktır. 
+* Açılan ekranda View Policy Document’e tıkladıktan sonra ortaya çıkan Edit linkine tıklayın. Policy document kutucuğu editable duruma gelecektir. Kutucuğa şu text’i girin:
+'''
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -96,17 +111,19 @@ IMAGE 10
         }
     ]
 }
-*Allow butonuna tıklayın
-*Create function butonuna tıklayın
-*Yeni ekranda Function Code alanına doğru inin ve kodu aşağıdakiyle değiştirin
+'''
+* Allow butonuna tıklayın
+* Create function butonuna tıklayın
+* Yeni ekranda Function Code alanına doğru inin ve kodu aşağıdakiyle değiştirin
 
+'''
 import os
 import io
 import boto3
 import json
 import csv
 
-# grab environment variables
+#grab environment variables
 ENDPOINT_NAME = os.environ['ENDPOINT_NAME']
 runtime= boto3.client('runtime.sagemaker')
 
@@ -126,55 +143,77 @@ def lambda_handler(event, context):
     pred = float(result['predictions'][0]['score'])
     print("pred: " + repr(pred))
     return pred
+'''
 
-*Biraz daha aşağıdaki Environment Variables alanına gelin. Key alanına ENDPOINT_NAME yazın. Value alanına Notebook’unuzun çalışırken çıktı olarak ürettiği “DEMO-linear-endpoint-XXX” ile başlayan enpoint adını kopyalayın. Endpoint adını öğrenmek için tarayıcı ekranında açılan Notebook’unuza geri dönün. DEMO-linear-endpoint- metnini aratın. Bu metni bulduğunuz ilk kod kutucuğunun altında gördüğünüz üretilmiş endpoint’in adını kopyalayın (DEMO-linear-endpoint-201810060646 gibi bir metin olması gerekiyor). Kod kutucuğu hala işletilmemişse işletilmesini bekledikten sonra bu adımı gerçekleştirin.
-*Save butonuna tıklayın
+* Biraz daha aşağıdaki Environment Variables alanına gelin. Key alanına ENDPOINT_NAME yazın. Value alanına Notebook’unuzun çalışırken çıktı olarak ürettiği “DEMO-linear-endpoint-XXX” ile başlayan enpoint adını kopyalayın. Endpoint adını öğrenmek için tarayıcı ekranında açılan Notebook’unuza geri dönün. DEMO-linear-endpoint- metnini aratın. Bu metni bulduğunuz ilk kod kutucuğunun altında gördüğünüz üretilmiş endpoint’in adını kopyalayın (DEMO-linear-endpoint-201810060646 gibi bir metin olması gerekiyor). Kod kutucuğu hala işletilmemişse işletilmesini bekledikten sonra bu adımı gerçekleştirin.
+* Save butonuna tıklayın
 
 ## AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması
 
-*Şimdi oluşturduğumuz Lambda fonksiyonunu web servis olarak çağırabilmek için API Gateway servisini konfigüre edeceğiz.
+* Şimdi oluşturduğumuz Lambda fonksiyonunu web servis olarak çağırabilmek için API Gateway servisini konfigüre edeceğiz.
 
-*Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa API Gateway yazın ve en üstte gelen linke tıklayın
-*Create API butonuna tıklayın. API Name alanına sagemakerprediction gibi bir apı adı yazın, Endpoint Type’ını Regional olarak bırakın ve Create Api butonuna tıklayın.
+* Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa API Gateway yazın ve en üstte gelen linke tıklayın
+* Create API butonuna tıklayın. API Name alanına sagemakerprediction gibi bir apı adı yazın, Endpoint Type’ını Regional olarak bırakın ve Create Api butonuna tıklayın.
 
-IMAGE 11
 
-*Actions menüsünden Create Resource’u seçin
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture10.png">
+</p>
 
-IMAGE 12
+* Actions menüsünden Create Resource’u seçin
 
-*Resource Name alanına predictor yazın. Create Resource butonuna tıklayın
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture11.png">
+</p>
 
-IMAGE 13
+* Resource Name alanına predictor yazın. Create Resource butonuna tıklayın
 
-*Yine Actions menüsünden Create Method’u seçin
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture12.png">
+</p>
 
-IMAGE 14
+* Yine Actions menüsünden Create Method’u seçin
+
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture13.png">
+</p>
 
 Açılan combo’dan POST metodunu seçin ve hemen yanındaki tick işaretine tıklayın
 
-IMAGE 15
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture14.png">
+</p>
 
 Lambda Function alanına bir önceki adımda yarattığınız lambda fonksiyonunun adını girin ve Save butonuna tıklayın. Çıkan ekranda OK’e tıklayın
 
-IMAGE 16
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture15.png">
+</p>
 
 Yine Actions menüsünden Deploy API’i seçin
 
-IMAGE 17
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture16.png">
+</p>
 
 Deployment Stage olarak  New Stage’i seçin ve ekran görüntüsündeki gibi doldurarak Deploy butonuna tıklayın
 
-IMAGE 18
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture17.png">
+</p>
 
-*Stages’in altındaki POST’a tıklayın. Karşınıza çıkan Invoke URL’I not alın
+* Stages’in altındaki POST’a tıklayın. Karşınıza çıkan Invoke URL’I not alın
 
-IMAGE 19
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture18.png">
+</p>
 
 ## Servisin testi
 Postman gibi bir HTTP Client kullanarak oluşturduğunuz servisi test edin. Metod olarak post’u seçin. Request URL alanına yukarıda not ettiğiniz URL’i yapıştırın.  Alttaki Body tabından raw radio butonunu seçin
 
-IMAGE 20
+<p align="center">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture19.png">
+</p>
 
 Örnek test datası:
 
@@ -190,5 +229,5 @@ IMAGE 20
 
 ## Authors
 
-* **Baris Yasin** - *Initial work* - [PurpleBooth](https://github.com/barisyasin)
+* **Baris Yasin** - *Initial work* - [barisyasin](https://github.com/barisyasin)
 
