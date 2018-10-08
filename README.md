@@ -25,6 +25,9 @@ Servisin testi
 
 <p align="center">
 <img src="Picture0.png">
+<img src="Picture0.png">
+<img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture0.png">
+<img src="https://github.com/awslabs/amazon-sagemaker-examples/blob/master/scientific_details_of_algorithms/lda_topic_modeling/img/img_documents.png">
 </p>
 
 * “Create notebook” instance butonuna tıkla
