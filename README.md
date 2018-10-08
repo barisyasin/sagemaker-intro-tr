@@ -24,7 +24,7 @@ Servisin testi
 *Konsolda sağ üst köşedeki Region'lardan kendinize yakın olan birini seçin (sadece Amazon Sagemaker’ın kullanılabildiği Regionlar listelenmektedir). Seçtiğiniz Region’ın adını bir kenara not alın.
 
 <p align="center">
-<img src="picture0.png">
+<img src="Picture0.png">
 </p>
 
 * “Create notebook” instance butonuna tıkla
