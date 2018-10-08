@@ -6,7 +6,7 @@ Bu atölye çalışmasında AWS servislerini kullanarak adım adım bir makina �
 
 AWS hesabınız olmalıdır. Yoksa şu linkten oluşturabilirsiniz: https://aws.amazon.com/resources/create-account/
 
-### Adımalr
+### Adımlar
 
 Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 
