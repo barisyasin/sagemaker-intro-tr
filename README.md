@@ -23,31 +23,27 @@ Servisin testi
 *AWS Services etiketinin aldındaki arama kutusuna Sagemaker yazın, çıkan linke tıklayın
 *Konsolda sağ üst köşedeki Region'lardan kendinize yakın olan birini seçin (sadece Amazon Sagemaker’ın kullanılabildiği Regionlar listelenmektedir). Seçtiğiniz Region’ın adını bir kenara not alın.
 
-IMAGE 1
-(picture0.png)
-(images/picture0.png)
-(./images/picture0.png)
-[deneme1](picture0.png)
-[deneme2](images/picture0.png)
-[deneme3](./images/picture0.png)
+<p align="center">
+<img src="picture0.png">
+</p>
 
-*“Create notebook” instance butonuna tıkla
+* “Create notebook” instance butonuna tıkla
 
 IMAGE 2
 
-*Notebook instance name kutucuğuna istediğiniz tanımlayıcı metni girin. Notebook instance type olarak ml.m4.xlarge seçin. Diğer alanları değiştirmeden Create Notebook Instance butonuna tıklayın.
+* Notebook instance name kutucuğuna istediğiniz tanımlayıcı metni girin. Notebook instance type olarak ml.m4.xlarge seçin. Diğer alanları değiştirmeden Create Notebook Instance butonuna tıklayın.
 
 IMAGE 3
 
 ## Amazon S3 üzerinde bucket'ımızın oluşturulması
-*Üzerinde makina öğrenmesi algoritmalarını deneyeceğimiz ortamımız oluşturulurken, bu ortamın ihtiyaç duyacağı veriyi tutacağımız S3 bucket’ımızı oluşturalım. Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa S3 yazın ve en üstte gelen linke tıklayın.
-*Gelen ekranda Create Bucket butonuna tıklayın
+* Üzerinde makina öğrenmesi algoritmalarını deneyeceğimiz ortamımız oluşturulurken, bu ortamın ihtiyaç duyacağı veriyi tutacağımız S3 bucket’ımızı oluşturalım. Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa S3 yazın ve en üstte gelen linke tıklayın.
+* Gelen ekranda Create Bucket butonuna tıklayın
 
 IMAGE 4
 
-*Bucket name alanına içinde sagemaker kelimesi geçecek şekilde bir metin girin. Örn. adinizsoyadiniz-sagemaker. Bucket adını not alın.
-*Region olarak yukarıda not aldığınız Region’ı seçin
-*Sol alt köşede bulunan Create butonuna tıklayarak bucket’ınızı yaratın
+* Bucket name alanına içinde sagemaker kelimesi geçecek şekilde bir metin girin. Örn. adinizsoyadiniz-sagemaker. Bucket adını not alın.
+* Region olarak yukarıda not aldığınız Region’ı seçin
+* Sol alt köşede bulunan Create butonuna tıklayarak bucket’ınızı yaratın
 
 ## Modelin oluşturulması
 *Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa Sagemaker yazın ve en üstte gelen linke tıklayın
