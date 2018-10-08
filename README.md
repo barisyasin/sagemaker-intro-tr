@@ -181,25 +181,25 @@ def lambda_handler(event, context):
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture13.png">
 </p>
 
-Açılan combo’dan POST metodunu seçin ve hemen yanındaki tick işaretine tıklayın
+* Açılan combo’dan POST metodunu seçin ve hemen yanındaki tick işaretine tıklayın
 
 <p align="center">
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture14.png">
 </p>
 
-Lambda Function alanına bir önceki adımda yarattığınız lambda fonksiyonunun adını girin ve Save butonuna tıklayın. Çıkan ekranda OK’e tıklayın
+* Lambda Function alanına bir önceki adımda yarattığınız lambda fonksiyonunun adını girin ve Save butonuna tıklayın. Çıkan ekranda OK’e tıklayın
 
 <p align="center">
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture15.png">
 </p>
 
-Yine Actions menüsünden Deploy API’i seçin
+* Yine Actions menüsünden Deploy API’i seçin
 
 <p align="center">
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture16.png">
 </p>
 
-Deployment Stage olarak  New Stage’i seçin ve ekran görüntüsündeki gibi doldurarak Deploy butonuna tıklayın
+* Deployment Stage olarak  New Stage’i seçin ve ekran görüntüsündeki gibi doldurarak Deploy butonuna tıklayın
 
 <p align="center">
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture17.png">
@@ -212,7 +212,7 @@ Deployment Stage olarak  New Stage’i seçin ve ekran görüntüsündeki gibi d
 </p>
 
 ## 6. Servisin testi
-Postman gibi bir HTTP Client kullanarak oluşturduğunuz servisi test edin. Metod olarak post’u seçin. Request URL alanına yukarıda not ettiğiniz URL’i yapıştırın.  Alttaki Body tabından raw radio butonunu seçin
+* Postman gibi bir HTTP Client kullanarak oluşturduğunuz servisi test edin. Metod olarak post’u seçin. Request URL alanına yukarıda not ettiğiniz URL’i yapıştırın.  Alttaki Body tabından raw radio butonunu seçin
 
 <p align="center">
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture19.png">
