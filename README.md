@@ -17,7 +17,7 @@ Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 * AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması
 Servisin testi
 
-## Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
+## 1. Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
 * AWS Konsol'a login olun
 * AWS Services etiketinin aldındaki arama kutusuna Sagemaker yazın, çıkan linke tıklayın
 * Konsolda sağ üst köşedeki Region'lardan kendinize yakın olan birini seçin (sadece Amazon Sagemaker’ın kullanılabildiği Regionlar listelenmektedir). Seçtiğiniz Region’ın adını bir kenara not alın.
@@ -218,9 +218,10 @@ Postman gibi bir HTTP Client kullanarak oluşturduğunuz servisi test edin. Meto
 </p>
 
 Örnek test datası:
-'''
+```
 {"data":"13.49,22.3,86.91,561.0,0.08752,0.07697999999999999,0.047510000000000004,0.033839999999999995,0.1809,0.057179999999999995,0.2338,1.3530000000000002,1.735,20.2,0.004455,0.013819999999999999,0.02095,0.01184,0.01641,0.001956,15.15,31.82,99.0,698.8,0.1162,0.1711,0.2282,0.1282,0.2871,0.06917000000000001"}
-'''
+```
+
 ## Temizlik
 * Bu lab esnasında birçok kaynak yarattınız. Daha sonra faturanıza yansımaması için:
 * Sagemaker Notebook instance’ınızı kapatın
