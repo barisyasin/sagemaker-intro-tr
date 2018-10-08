@@ -1,10 +1,10 @@
 # AWS Kullanarak makina öğrenmesi modellerinin oluşturulması ve web servis olarak sunulması
 
-Bu atölye çalışmasında AWS servislerini kullanarak adım adım bir makina öğrenmesi modeli oluşturacağız web servis olarak modelimizi web üzerinden erişime açacağız
+Bu atölye çalışmasında AWS servislerini kullanarak adım adım bir makina öğrenmesi modeli oluşturacağız ve modelimizi web servis üzerinden erişime açacağız
 
 ### Ön koşullar
 
-AWS hesabınız olmalıdır. Yoksa şu linkten oluşturabilirsiniz: https://aws.amazon.com/resources/create-account/
+Bir AWS hesabınız olmalıdır. Yoksa şu linkten oluşturabilirsiniz: https://aws.amazon.com/resources/create-account/
 
 ### Adımlar
 
