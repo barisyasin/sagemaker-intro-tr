@@ -10,21 +10,22 @@ AWS hesabınız olmalıdır. Yoksa şu linkten oluşturabilirsiniz: https://aws.
 
 Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 
-
 ```
-Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
-Amazon S3 üzerinde bucket'ımızın oluşturulması
-Modelin oluşturulması
-Modeli çağıracak AWS Lambda fonksiyonunun yazılması
-AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması
+•Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
+•Amazon S3 üzerinde bucket'ımızın oluşturulması
+•Modelin oluşturulması
+•Modeli çağıracak AWS Lambda fonksiyonunun yazılması
+•AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması
 Servisin testi
 ```
 
 
 ## Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
-•   AWS Konsol'a login olun
-•   AWS Services etiketinin aldındaki arama kutusuna Sagemaker yazın, çıkan linke tıklayın
-•   Konsolda sağ üst köşedeki Region'lardan kendinize yakın olan birini seçin (sadece Amazon Sagemaker’ın kullanılabildiği Regionlar listelenmektedir). Seçtiğiniz Region’ın adını bir kenara not alın.
+•AWS Konsol'a login olun
+
+•AWS Services etiketinin aldındaki arama kutusuna Sagemaker yazın, çıkan linke tıklayın
+
+•Konsolda sağ üst köşedeki Region'lardan kendinize yakın olan birini seçin (sadece Amazon Sagemaker’ın kullanılabildiği Regionlar listelenmektedir). Seçtiğiniz Region’ın adını bir kenara not alın.
 
 ## Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
 
