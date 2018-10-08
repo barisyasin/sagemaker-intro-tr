@@ -99,7 +99,8 @@ Servisin testi
 
 * Role için Create a custom role seçeneğine tıklayın. AWS Lambda’nın Amazon Sagemaker’ı çağırırken kullanacağı rolü oluşturacağınız ekran açılacaktır. 
 * Açılan ekranda View Policy Document’e tıkladıktan sonra ortaya çıkan Edit linkine tıklayın. Policy document kutucuğu editable duruma gelecektir. Kutucuğa şu text’i girin:
-'''
+
+```
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -111,12 +112,13 @@ Servisin testi
         }
     ]
 }
-'''
+```
+
 * Allow butonuna tıklayın
 * Create function butonuna tıklayın
 * Yeni ekranda Function Code alanına doğru inin ve kodu aşağıdakiyle değiştirin
 
-'''
+```
 import os
 import io
 import boto3
@@ -143,7 +145,7 @@ def lambda_handler(event, context):
     pred = float(result['predictions'][0]['score'])
     print("pred: " + repr(pred))
     return pred
-'''
+```
 
 * Biraz daha aşağıdaki Environment Variables alanına gelin. Key alanına ENDPOINT_NAME yazın. Value alanına Notebook’unuzun çalışırken çıktı olarak ürettiği “DEMO-linear-endpoint-XXX” ile başlayan enpoint adını kopyalayın. Endpoint adını öğrenmek için tarayıcı ekranında açılan Notebook’unuza geri dönün. DEMO-linear-endpoint- metnini aratın. Bu metni bulduğunuz ilk kod kutucuğunun altında gördüğünüz üretilmiş endpoint’in adını kopyalayın (DEMO-linear-endpoint-201810060646 gibi bir metin olması gerekiyor). Kod kutucuğu hala işletilmemişse işletilmesini bekledikten sonra bu adımı gerçekleştirin.
 * Save butonuna tıklayın
@@ -216,16 +218,16 @@ Postman gibi bir HTTP Client kullanarak oluşturduğunuz servisi test edin. Meto
 </p>
 
 Örnek test datası:
-
+'''
 {"data":"13.49,22.3,86.91,561.0,0.08752,0.07697999999999999,0.047510000000000004,0.033839999999999995,0.1809,0.057179999999999995,0.2338,1.3530000000000002,1.735,20.2,0.004455,0.013819999999999999,0.02095,0.01184,0.01641,0.001956,15.15,31.82,99.0,698.8,0.1162,0.1711,0.2282,0.1282,0.2871,0.06917000000000001"}
-
+'''
 ## Temizlik
-*Bu lab esnasında birçok kaynak yarattınız. Daha sonra faturanıza yansımaması için:
--Sagemaker Notebook instance’ınızı kapatın
--S3 Bucket’ınızı silin
--Sagemaker Endpointinizi ve Endpoint konfigürasyonlarınızı silin
--API Gateway’de tanımlı APIlerinizi silin
--Lambda fonksiyonunuzu silin
+* Bu lab esnasında birçok kaynak yarattınız. Daha sonra faturanıza yansımaması için:
+* Sagemaker Notebook instance’ınızı kapatın
+* S3 Bucket’ınızı silin
+* Sagemaker Endpointinizi ve Endpoint konfigürasyonlarınızı silin
+* API Gateway’de tanımlı APIlerinizi silin
+* Lambda fonksiyonunuzu silin
 
 ## Authors
 
