@@ -15,7 +15,8 @@ Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 * Modelin oluşturulması
 * Modeli çağıracak AWS Lambda fonksiyonunun yazılması
 * AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması
-Servisin testi
+* Servisin testi
+* Temizlik
 
 ## 1. Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
 * AWS Konsol'a login olun
@@ -38,7 +39,7 @@ Servisin testi
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture2.png">
 </p>
 
-## Amazon S3 üzerinde bucket'ımızın oluşturulması
+## 2. Amazon S3 üzerinde bucket'ımızın oluşturulması
 * Üzerinde makina öğrenmesi algoritmalarını deneyeceğimiz ortamımız oluşturulurken, bu ortamın ihtiyaç duyacağı veriyi tutacağımız S3 bucket’ımızı oluşturalım. Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa S3 yazın ve en üstte gelen linke tıklayın.
 * Gelen ekranda Create Bucket butonuna tıklayın
 
@@ -50,7 +51,7 @@ Servisin testi
 * Region olarak yukarıda not aldığınız Region’ı seçin
 * Sol alt köşede bulunan Create butonuna tıklayarak bucket’ınızı yaratın
 
-## Modelin oluşturulması
+## 3. Modelin oluşturulması
 * Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa Sagemaker yazın ve en üstte gelen linke tıklayın
 * Soldaki menüden Notebook instances linkine tıklayın
 * Gelen listede oluşturduğunuz Notebook Instance’ın Status’u InService olarak görünüyorsa Open linkine tıklayın. InService olarak görünmüyorsa birkaç dakika daha bekleyin
@@ -80,7 +81,7 @@ Servisin testi
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture7.png">
 </p>
 
-## Modeli çağıracak AWS Lambda fonksiyonunun yazılması
+## 4. Modeli çağıracak AWS Lambda fonksiyonunun yazılması
 
 * Şimdi yarattığımız bu model’ı çağıran bir Lambda fonksiyonu yaratacağız. Amacımız aşağıdaki yapıyı kurarak modelimizi web servisler üzerinden ulaşılabilir hale getirmek
 
@@ -150,7 +151,7 @@ def lambda_handler(event, context):
 * Biraz daha aşağıdaki Environment Variables alanına gelin. Key alanına ENDPOINT_NAME yazın. Value alanına Notebook’unuzun çalışırken çıktı olarak ürettiği “DEMO-linear-endpoint-XXX” ile başlayan enpoint adını kopyalayın. Endpoint adını öğrenmek için tarayıcı ekranında açılan Notebook’unuza geri dönün. DEMO-linear-endpoint- metnini aratın. Bu metni bulduğunuz ilk kod kutucuğunun altında gördüğünüz üretilmiş endpoint’in adını kopyalayın (DEMO-linear-endpoint-201810060646 gibi bir metin olması gerekiyor). Kod kutucuğu hala işletilmemişse işletilmesini bekledikten sonra bu adımı gerçekleştirin.
 * Save butonuna tıklayın
 
-## AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması
+## 5. AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması
 
 * Şimdi oluşturduğumuz Lambda fonksiyonunu web servis olarak çağırabilmek için API Gateway servisini konfigüre edeceğiz.
 
@@ -210,7 +211,7 @@ Deployment Stage olarak  New Stage’i seçin ve ekran görüntüsündeki gibi d
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture18.png">
 </p>
 
-## Servisin testi
+## 6. Servisin testi
 Postman gibi bir HTTP Client kullanarak oluşturduğunuz servisi test edin. Metod olarak post’u seçin. Request URL alanına yukarıda not ettiğiniz URL’i yapıştırın.  Alttaki Body tabından raw radio butonunu seçin
 
 <p align="center">
@@ -222,7 +223,7 @@ Postman gibi bir HTTP Client kullanarak oluşturduğunuz servisi test edin. Meto
 {"data":"13.49,22.3,86.91,561.0,0.08752,0.07697999999999999,0.047510000000000004,0.033839999999999995,0.1809,0.057179999999999995,0.2338,1.3530000000000002,1.735,20.2,0.004455,0.013819999999999999,0.02095,0.01184,0.01641,0.001956,15.15,31.82,99.0,698.8,0.1162,0.1711,0.2282,0.1282,0.2871,0.06917000000000001"}
 ```
 
-## Temizlik
+## 7. Temizlik
 * Bu lab esnasında birçok kaynak yarattınız. Daha sonra faturanıza yansımaması için:
 * Sagemaker Notebook instance’ınızı kapatın
 * S3 Bucket’ınızı silin
