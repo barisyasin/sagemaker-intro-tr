@@ -21,19 +21,19 @@ Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 ## 1. Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
 * AWS Konsol'a login olun
 * AWS Services etiketinin aldındaki arama kutusuna Sagemaker yazın, çıkan linke tıklayın
-* Konsolda sağ üst köşedeki Region'lardan kendinize yakın olan birini seçin (sadece Amazon Sagemaker’ın kullanılabildiği Regionlar listelenmektedir). Seçtiğiniz Region’ın adını bir kenara not alın.
+* Konsolda sağ üst köşedeki Region'lardan kendinize yakın olan birini seçin (sadece Amazon Sagemaker’ın kullanılabildiği Regionlar listelenmektedir). Seçtiğiniz Region’ın adını bir kenara not alın
 
 <p align="center">
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture0.png">
 </p>
 
-* “Create notebook” instance butonuna tıkla
+* “Create notebook” instance butonuna tıklayın
 
 <p align="center">
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture1.png">
 </p>
 
-* Notebook instance name kutucuğuna istediğiniz tanımlayıcı metni girin. Notebook instance type olarak ml.m4.xlarge seçin. Diğer alanları değiştirmeden Create Notebook Instance butonuna tıklayın.
+* Notebook instance name kutucuğuna istediğiniz tanımlayıcı metni girin. Notebook instance type olarak ml.m4.xlarge seçin. Diğer alanları değiştirmeden Create Notebook Instance butonuna tıklayın
 
 <p align="center">
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture2.png">
@@ -47,7 +47,7 @@ Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture3.png">
 </p>
 
-* Bucket name alanına içinde sagemaker kelimesi geçecek şekilde bir metin girin. Örn. adinizsoyadiniz-sagemaker. Bucket adını not alın.
+* Bucket name alanına içinde sagemaker kelimesi geçecek şekilde bir metin girin. Örn. adinizsoyadiniz-sagemaker. Bucket adını not alın
 * Region olarak yukarıda not aldığınız Region’ı seçin
 * Sol alt köşede bulunan Create butonuna tıklayarak bucket’ınızı yaratın
 
@@ -75,7 +75,7 @@ Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 </p>
 
 * En alttaki kutucuğa gidin. Satırın en başına # yazarak comment out edin.
-* Cell menüsünde Run All’ı seçin. Notebook’daki bütün satırların çalışması bitene kadar bekleyin. Bu işlem yaklaşık 10 dakika sürecektir. O anda çalıştırılan kod satırlarının yanında (*) işareti çıkacaktır.
+* Cell menüsünde Run All’ı seçin. Notebook’daki bütün satırların çalışması bitene kadar bekleyin. Bu işlem yaklaşık 10 dakika sürecektir. O anda çalıştırılan kod satırlarının yanında (*) işareti çıkacaktır
 
 <p align="center">
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture7.png">
@@ -98,7 +98,7 @@ Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture9.png">
 </p>
 
-* Role için Create a custom role seçeneğine tıklayın. AWS Lambda’nın Amazon Sagemaker’ı çağırırken kullanacağı rolü oluşturacağınız ekran açılacaktır. 
+* Role için Create a custom role seçeneğine tıklayın. AWS Lambda’nın Amazon Sagemaker’ı çağırırken kullanacağı rolü oluşturacağınız ekran açılacaktır 
 * Açılan ekranda View Policy Document’e tıkladıktan sonra ortaya çıkan Edit linkine tıklayın. Policy document kutucuğu editable duruma gelecektir. Kutucuğa şu text’i girin:
 
 ```
@@ -148,15 +148,15 @@ def lambda_handler(event, context):
     return pred
 ```
 
-* Biraz daha aşağıdaki Environment Variables alanına gelin. Key alanına ENDPOINT_NAME yazın. Value alanına Notebook’unuzun çalışırken çıktı olarak ürettiği “DEMO-linear-endpoint-XXX” ile başlayan enpoint adını kopyalayın. Endpoint adını öğrenmek için tarayıcı ekranında açılan Notebook’unuza geri dönün. DEMO-linear-endpoint- metnini aratın. Bu metni bulduğunuz ilk kod kutucuğunun altında gördüğünüz üretilmiş endpoint’in adını kopyalayın (DEMO-linear-endpoint-201810060646 gibi bir metin olması gerekiyor). Kod kutucuğu hala işletilmemişse işletilmesini bekledikten sonra bu adımı gerçekleştirin.
+* Biraz daha aşağıdaki Environment Variables alanına gelin. Key alanına ENDPOINT_NAME yazın. Value alanına Notebook’unuzun çalışırken çıktı olarak ürettiği “DEMO-linear-endpoint-XXX” ile başlayan enpoint adını kopyalayın. Endpoint adını öğrenmek için tarayıcı ekranında açılan Notebook’unuza geri dönün. DEMO-linear-endpoint- metnini aratın. Bu metni bulduğunuz ilk kod kutucuğunun altında gördüğünüz üretilmiş endpoint’in adını kopyalayın (DEMO-linear-endpoint-201810060646 gibi bir metin olması gerekiyor). Kod kutucuğu hala işletilmemişse işletilmesini bekledikten sonra bu adımı gerçekleştirin
 * Save butonuna tıklayın
 
 ## 5. AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması
 
-* Şimdi oluşturduğumuz Lambda fonksiyonunu web servis olarak çağırabilmek için API Gateway servisini konfigüre edeceğiz.
+* Şimdi oluşturduğumuz Lambda fonksiyonunu web servis olarak çağırabilmek için API Gateway servisini konfigüre edeceğiz
 
 * Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa API Gateway yazın ve en üstte gelen linke tıklayın
-* Create API butonuna tıklayın. API Name alanına sagemakerprediction gibi bir apı adı yazın, Endpoint Type’ını Regional olarak bırakın ve Create Api butonuna tıklayın.
+* Create API butonuna tıklayın. API Name alanına sagemakerprediction gibi bir apı adı yazın, Endpoint Type’ını Regional olarak bırakın ve Create Api butonuna tıklayın
 
 
 <p align="center">
@@ -225,11 +225,11 @@ def lambda_handler(event, context):
 
 ## 7. Temizlik
 * Bu lab esnasında birçok kaynak yarattınız. Daha sonra faturanıza yansımaması için:
-* Sagemaker Notebook instance’ınızı kapatın
-* S3 Bucket’ınızı silin
-* Sagemaker Endpointinizi ve Endpoint konfigürasyonlarınızı silin
-* API Gateway’de tanımlı APIlerinizi silin
-* Lambda fonksiyonunuzu silin
+    * Sagemaker Notebook instance’ınızı kapatın
+    * S3 Bucket’ınızı silin
+    * Sagemaker Endpointinizi ve Endpoint konfigürasyonlarınızı silin
+    * API Gateway’de tanımlı APIlerinizi silin
+    * Lambda fonksiyonunuzu silin
 
 ## Authors
 
