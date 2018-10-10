@@ -103,10 +103,7 @@ Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 </p>
 
 * Role için Create a custom role seçeneğine tıklayın. AWS Lambda’nın Amazon Sagemaker’ı çağırırken kullanacağı rolü oluşturacağınız ekran açılacaktır 
-* Açılan ekranda View Policy Document’e tıkladıktan sonra ortaya çıkan Edit linkine tıklayın. Policy document kutucuğu editable duruma gelecektir. [Kutucuğa şu text’i girin:](https://github.com/barisyasin/sagemaker-intro-tr/code/policy.txt)
-
-[text:](./code/policy.txt)
-[text:](code/policy.txt)
+* Açılan ekranda View Policy Document’e tıkladıktan sonra ortaya çıkan Edit linkine tıklayın. Policy document kutucuğu editable duruma gelecektir. Kutucuğa şu [text’i](code/policy.txt) girin:
 
 
 ```
@@ -125,7 +122,7 @@ Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 
 * Allow butonuna tıklayın
 * Create function butonuna tıklayın
-* [Yeni ekranda Function Code alanına doğru inin ve kodu aşağıdakiyle değiştirin](https://github.com/barisyasin/sagemaker-intro-tr/code/lambda_function.py)
+* Yeni ekranda Function Code alanına doğru inin ve [kodu](code/lambda_function.py) aşağıdakiyle değiştirin
 
 ```
 import os
@@ -228,7 +225,7 @@ def lambda_handler(event, context):
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture19.png">
 </p>
 
-[Örnek test datası:](https://github.com/barisyasin/sagemaker-intro-tr/code/sample_request.txt)
+[Örnek test datası:](code/sample_request.txt)
 ```
 {"data":"13.49,22.3,86.91,561.0,0.08752,0.07697999999999999,0.047510000000000004,0.033839999999999995,0.1809,0.057179999999999995,0.2338,1.3530000000000002,1.735,20.2,0.004455,0.013819999999999999,0.02095,0.01184,0.01641,0.001956,15.15,31.82,99.0,698.8,0.1162,0.1711,0.2282,0.1282,0.2871,0.06917000000000001"}
 ```
