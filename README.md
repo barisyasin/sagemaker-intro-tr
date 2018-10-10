@@ -84,6 +84,7 @@ Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture7.png">
 </p>
 
+<a name="head4"></a>
 ## 4. Modeli çağıracak AWS Lambda fonksiyonunun yazılması
 
 * Şimdi yarattığımız bu model’ı çağıran bir Lambda fonksiyonu yaratacağız. Amacımız aşağıdaki yapıyı kurarak modelimizi web servisler üzerinden ulaşılabilir hale getirmek
@@ -102,7 +103,7 @@ Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 </p>
 
 * Role için Create a custom role seçeneğine tıklayın. AWS Lambda’nın Amazon Sagemaker’ı çağırırken kullanacağı rolü oluşturacağınız ekran açılacaktır 
-* Açılan ekranda View Policy Document’e tıkladıktan sonra ortaya çıkan Edit linkine tıklayın. Policy document kutucuğu editable duruma gelecektir. Kutucuğa şu text’i girin:
+* Açılan ekranda View Policy Document’e tıkladıktan sonra ortaya çıkan Edit linkine tıklayın. Policy document kutucuğu editable duruma gelecektir. [Kutucuğa şu text’i girin:](https://github.com/barisyasin/sagemaker-intro-tr/code/policy.txt)
 
 ```
 {
@@ -120,7 +121,7 @@ Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 
 * Allow butonuna tıklayın
 * Create function butonuna tıklayın
-* Yeni ekranda Function Code alanına doğru inin ve kodu aşağıdakiyle değiştirin
+* [Yeni ekranda Function Code alanına doğru inin ve kodu aşağıdakiyle değiştirin](https://github.com/barisyasin/sagemaker-intro-tr/code/lambda_function.py)
 
 ```
 import os
@@ -154,6 +155,7 @@ def lambda_handler(event, context):
 * Biraz daha aşağıdaki Environment Variables alanına gelin. Key alanına ENDPOINT_NAME yazın. Value alanına Notebook’unuzun çalışırken çıktı olarak ürettiği “DEMO-linear-endpoint-XXX” ile başlayan enpoint adını kopyalayın. Endpoint adını öğrenmek için tarayıcı ekranında açılan Notebook’unuza geri dönün. DEMO-linear-endpoint- metnini aratın. Bu metni bulduğunuz ilk kod kutucuğunun altında gördüğünüz üretilmiş endpoint’in adını kopyalayın (DEMO-linear-endpoint-201810060646 gibi bir metin olması gerekiyor). Kod kutucuğu hala işletilmemişse işletilmesini bekledikten sonra bu adımı gerçekleştirin
 * Save butonuna tıklayın
 
+<a name="head5"></a>
 ## 5. AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması
 
 * Şimdi oluşturduğumuz Lambda fonksiyonunu web servis olarak çağırabilmek için API Gateway servisini konfigüre edeceğiz
@@ -214,6 +216,7 @@ def lambda_handler(event, context):
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture18.png">
 </p>
 
+<a name="head6"></a>
 ## 6. Servisin testi
 * Postman gibi bir HTTP Client kullanarak oluşturduğunuz servisi test edin. Metod olarak post’u seçin. Request URL alanına yukarıda not ettiğiniz URL’i yapıştırın.  Alttaki Body tabından raw radio butonunu seçin
 
@@ -221,11 +224,12 @@ def lambda_handler(event, context):
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture19.png">
 </p>
 
-Örnek test datası:
+[Örnek test datası:](https://github.com/barisyasin/sagemaker-intro-tr/code/sample_request.txt)
 ```
 {"data":"13.49,22.3,86.91,561.0,0.08752,0.07697999999999999,0.047510000000000004,0.033839999999999995,0.1809,0.057179999999999995,0.2338,1.3530000000000002,1.735,20.2,0.004455,0.013819999999999999,0.02095,0.01184,0.01641,0.001956,15.15,31.82,99.0,698.8,0.1162,0.1711,0.2282,0.1282,0.2871,0.06917000000000001"}
 ```
 
+<a name="head7"></a>
 ## 7. Temizlik
 * Bu lab esnasında birçok kaynak yarattınız. Daha sonra faturanıza yansımaması için:
     * Sagemaker Notebook instance’ınızı kapatın
