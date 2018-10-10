@@ -105,6 +105,10 @@ Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 * Role için Create a custom role seçeneğine tıklayın. AWS Lambda’nın Amazon Sagemaker’ı çağırırken kullanacağı rolü oluşturacağınız ekran açılacaktır 
 * Açılan ekranda View Policy Document’e tıkladıktan sonra ortaya çıkan Edit linkine tıklayın. Policy document kutucuğu editable duruma gelecektir. [Kutucuğa şu text’i girin:](https://github.com/barisyasin/sagemaker-intro-tr/code/policy.txt)
 
+[text:](./code/policy.txt)
+[text:](code/policy.txt)
+
+
 ```
 {
     "Version": "2012-10-17",
