@@ -10,15 +10,16 @@ Bir AWS hesabınız olmalıdır. Yoksa şu linkten oluşturabilirsiniz: https://
 
 Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 
-1. [link](#head1234)Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
-2. Amazon S3 üzerinde bucket'ımızın oluşturulması
-3. Modelin oluşturulması
-4. Modeli çağıracak AWS Lambda fonksiyonunun yazılması
-5. AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması
-6. Servisin testi
-7. Temizlik
+1. [Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması](#head1)
+2. [Amazon S3 üzerinde bucket'ımızın oluşturulması](#head2)
+3. [Modelin oluşturulması](#head3)
+4. [Modeli çağıracak AWS Lambda fonksiyonunun yazılması](#head4)
+5. [AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması](#head5)
+6. [Servisin testi](#head6)
+7. [Temizlik](#head7)
 
-## 1. Amazon Sagemaker kullanarak notebook makinasının ayağa <a name="head1234">kaldırılması</a>
+<a name="head1"></a>
+## 1. Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
 * AWS Konsol'a login olun
 * AWS Services etiketinin aldındaki arama kutusuna Sagemaker yazın, çıkan linke tıklayın
 * Konsolda sağ üst köşedeki Region'lardan kendinize yakın olan birini seçin (sadece Amazon Sagemaker’ın kullanılabildiği Regionlar listelenmektedir). Seçtiğiniz Region’ın adını bir kenara not alın
@@ -39,6 +40,7 @@ Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 <img src="https://github.com/barisyasin/sagemaker-intro-tr/blob/master/blob/master/Picture2.png">
 </p>
 
+<a name="head2"></a>
 ## 2. Amazon S3 üzerinde bucket'ımızın oluşturulması
 * Üzerinde makina öğrenmesi algoritmalarını deneyeceğimiz ortamımız oluşturulurken, bu ortamın ihtiyaç duyacağı veriyi tutacağımız S3 bucket’ımızı oluşturalım. Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa S3 yazın ve en üstte gelen linke tıklayın.
 * Gelen ekranda Create Bucket butonuna tıklayın
@@ -51,6 +53,7 @@ Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 * Region olarak yukarıda not aldığınız Region’ı seçin
 * Sol alt köşede bulunan Create butonuna tıklayarak bucket’ınızı yaratın
 
+<a name="head3"></a>
 ## 3. Modelin oluşturulması
 * Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa Sagemaker yazın ve en üstte gelen linke tıklayın
 * Soldaki menüden Notebook instances linkine tıklayın
