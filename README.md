@@ -1,6 +1,6 @@
 # AWS Kullanarak makina öğrenmesi modellerinin oluşturulması ve web servis olarak sunulması
 
-Bu atölye çalışmasında AWS servislerini kullanarak adım adım bir makina öğrenmesi modeli oluşturacağız ve modelimizi web servis üzerinden erişime açacağız
+Bu atölye çalışmasında AWS servislerini kullanarak adım adım bir makina öğrenmesi modeli oluşturacağız ve modelimizi web servis üzerinden erişime açacağız. Modelimizi oluştururken SageMaker'ın içinde hazır olarak gelen Linear-Learner algoritmasını kullanacağız ve göğüs kanseri için üretilmiş açık veri setinden yararlanacağız (https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data https://www.kaggle.com/uciml/breast-cancer-wisconsin-data)
 
 ### Ön koşullar
 
@@ -15,8 +15,8 @@ Atölye çalışması esnasında aşağıdaki adımları tamamlayacağız:
 3. [Modelin oluşturulması](#head3)
 4. [Modeli çağıracak AWS Lambda fonksiyonunun yazılması](#head4)
 5. [AWS Lambda fonksiyonunu web'e açmak için Amazon API Gateway servisinde konfigürasyonların yapılması](#head5)
-6. [Servisin testi](#head6)
-7. [Temizlik](#head7)
+6. [Servisin test edilmesi](#head6)
+7. [Servislerin kapatılması](#head7)
 
 <a name="head1"></a>
 ## 1. Amazon Sagemaker kullanarak notebook makinasının ayağa kaldırılması
@@ -162,7 +162,7 @@ def lambda_handler(event, context):
 * Şimdi oluşturduğumuz Lambda fonksiyonunu web servis olarak çağırabilmek için API Gateway servisini konfigüre edeceğiz
 
 * Konsolda sol üst köşedeki Services butonuna tıklayın, çıkan kutucuğa API Gateway yazın ve en üstte gelen linke tıklayın
-* Create API butonuna tıklayın. API Name alanına sagemakerprediction gibi bir apı adı yazın, Endpoint Type’ını Regional olarak bırakın ve Create Api butonuna tıklayın
+* Create API butonuna tıklayın. API Name alanına sagemakerprediction gibi bir API adı yazın, Endpoint Type’ını Regional olarak bırakın ve Create API butonuna tıklayın
 
 
 <p align="center">
@@ -218,7 +218,7 @@ def lambda_handler(event, context):
 </p>
 
 <a name="head6"></a>
-## 6. Servisin testi
+## 6. Servisin test edilmesi
 * Postman gibi bir HTTP Client kullanarak oluşturduğunuz servisi test edin. Metod olarak post’u seçin. Request URL alanına yukarıda not ettiğiniz URL’i yapıştırın.  Alttaki Body tabından raw radio butonunu seçin
 
 <p align="center">
@@ -231,7 +231,7 @@ def lambda_handler(event, context):
 ```
 
 <a name="head7"></a>
-## 7. Temizlik
+## 7. Servislerin kapatılması
 * Bu lab esnasında birçok kaynak yarattınız. Daha sonra faturanıza yansımaması için:
     * Sagemaker Notebook instance’ınızı kapatın
     * S3 Bucket’ınızı silin
